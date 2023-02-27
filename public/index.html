@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <form class="upload-card" method="post" action="/" enctype="multipart/form-data">
+            <h1>Upload your image</h1>
+            <p>File should be Jpeg, Png,...</p>
+            <div class="drop-zone">
+                <img src="image.svg" alt="upload image">
+                <p>Drag and drop your image here</p>
+            </div>
+
+            <div>or</div>
+
+            <input type="file" name="image" id="file-input">
+        </form>
+
+        <div class="upload-processing">
+            Uploading...
+            <div class="progress-bar"></div>
+        </div>
+        <div class="upload-success">
+            <img src="check.png" alt="check" class="upload-success-check">
+            <h2>Uploaded Successfully</h2>
+            <img src="" alt="uploaded image" class="upload-success-image">
+            <div class="upload-success-link-container">
+                <input type="text" class="upload-success-link" readonly>
+                <button class="upload-success-copy-link">Copy Link</button>
+            </div>
+        </div>
+        <div class="upload-error">
+            upload error
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
