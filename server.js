@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
     res.render(__dirname + '/public/index.html');
 });
 
-app.post('/', upload.single("image"), (req, res) => {
+app.post('/upload', upload.single("image"), (req, res) => {
     res.json({ message: "File uploaded successfully", link: req.file.path });
 });
 
