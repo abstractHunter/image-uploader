@@ -116,7 +116,7 @@ function uploadImage(file) {
         sendingFile = false;
         uploadSuccessImage.src = window.location.href + imageLink;
         uploadSuccessLink.value = window.location.href + imageLink;
-    }, 100);
+    }, 1000);
 
 }
 
