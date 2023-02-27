@@ -9,7 +9,6 @@ let uploadSuccessImage = document.querySelector(".upload-success-image");
 let uploadSuccessLink = document.querySelector(".upload-success-link");
 let uploadSuccessCopy = document.querySelector(".upload-success-copy-link");
 
-let uploadError = document.querySelector(".upload-error");
 
 let sendingFile = false;
 
@@ -102,22 +101,25 @@ function uploadImage(file) {
         .then(res => res.json())
         .then(data => {
             imageLink = data.link;
+
+            setTimeout(() => {
+                uploadProcessing.style.display = "none";
+                uploadSuccess.style.display = "flex";
+                uploadSuccessImage.src = window.location.href + imageLink;
+                uploadSuccessLink.value = window.location.href + imageLink;
+            }, 1000);
         })
         .catch(err => {
             console.log(err);
+            setTimeout(() => {
+                uploadProcessing.style.display = "none";
+                uploadCard.style.display = "flex";
+                alert("An error occurred while uploading the image!");
+            }, 1000);
         })
         .finally(() => {
             sendingFile = false;
         });
-
-    setTimeout(() => {
-        uploadProcessing.style.display = "none";
-        uploadSuccess.style.display = "flex";
-        sendingFile = false;
-        uploadSuccessImage.src = window.location.href + imageLink;
-        uploadSuccessLink.value = window.location.href + imageLink;
-    }, 1000);
-
 }
 
 

@@ -144,8 +144,3 @@ body {
     font-size: 12px;
     cursor: pointer;
 }
-
-
-.upload-error {
-    display: none;
-}
