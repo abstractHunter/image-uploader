@@ -52,6 +52,22 @@ body {
     border: 3px dashed blueviolet;
 }
 
+.file-input-label {
+    width: 100px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+    background-color: #2f80e2;
+    color: #fff;
+}
+
+#file-input {
+    display: none;
+}
+
 .upload-processing {
     width: 400px;
     height: 140px;
